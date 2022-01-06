@@ -8,8 +8,6 @@ public class Authorization {
 
     public static boolean checkLoginPassword(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException, WrongInputException {
 
-        boolean result = false;
-
         if (login.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             throw new WrongInputException("Нужно заполнить все поля");
         }
@@ -30,9 +28,7 @@ public class Authorization {
             throw new WrongPasswordException("Введенные пароли должны совпадать");
         }
 
-        result = true;
-
-        return result;
+        return true;
     }
 
 }
